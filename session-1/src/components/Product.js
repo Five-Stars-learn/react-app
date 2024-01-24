@@ -9,11 +9,11 @@ const Product = (props)=> {
     <div className="card">
    <img src={product.image} className="card-img-top" alt={product.title}/>
   <div className="card-body">
-    <h5 className="card-title">{product.title}</h5>
-    <p className="card-text">
+    <h2 className="card-title">{product.title}</h2>
+    <h5 className="card-text">
     {product.description}
-    </p>
-    <p> Price: {product.price}Dt</p>
+    </h5>
+    <h2 className='price'> Price: {product.price}Dt</h2>
     {showButton && 
     <Link className="btn btn-primary" to={`/product/${product.id}`}>Details</Link>}
         </div>

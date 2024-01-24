@@ -28,11 +28,11 @@ const  ProductsList = () => {
       .then((data) =>{
         setProducts(data);
       })
-
-  }
-  useEffect(()=>{
+}
+   useEffect(()=>{
       getProducts();
       getCategories();
+      
    }, []);
   return (
     <>
@@ -50,7 +50,7 @@ const  ProductsList = () => {
               })
              }
              </div>
-        <div className = "container">
+         <div className = "container">
         <div className = "row">
           {products.map((product) => {
           return (

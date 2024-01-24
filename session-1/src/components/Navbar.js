@@ -1,11 +1,14 @@
-import React from 'react';
+import React from 'react';  
 import { Link } from "react-router-dom"
 import Logo from "./Logo"
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+  const cart = useSelector(state => state.cart);
+
   return (
     <>
-    <nav className="navbar navbar-expand-lg bg-light">
+    <nav className="navbar fixed='top' navbar-expand-lg bg-light">
     <div className="container-fluid">
       <Link className="navbar-brand" to="/logo">
         <Logo/>
@@ -24,15 +27,25 @@ const Navbar = () => {
       <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
       <li className="nav-item">
       <Link className="nav-link active" aria-current="page" to = {"/"}>
-        Home
+        <h2>Home</h2>
       </Link>
       </li>
       <li className="nav-item">
-      <Link className="nav-link" to ="/about">
-        About
+      <Link className="nav-link active" to ="/about">
+        <h2>About </h2>
       </Link>
-      </li>
-      </ul>
+     </li>
+     <li className="nav-item">
+      <Link className="nav-link active" to ="/cartApp">
+        <h2>CartApp </h2>
+      </Link>
+     </li>
+     <li className="nav-item">
+      <Link className="nav-link active" to ="/cart">
+        <h2>Cart - {cart.length}</h2>
+      </Link>
+     </li>
+     </ul>
       </div>
     </div>
   </nav>
